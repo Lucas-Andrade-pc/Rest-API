@@ -3,20 +3,20 @@ const rota = express.Router();
 
 rota.get('/', (req, res, next) =>{
     res.status(200).send({
-        message: 'Buscando todos produtos'
+        message: 'Buscando pedido'
     })
 })
 
 rota.post('/', (req,res,next) =>{
     res.status(201).send({
-        message: 'Usando post produto'
+        message: 'Usando post pedido'
     })
 })
 
 rota.delete('/:id_produto', (req,res,next) =>{
     const id_produto = req.params.id_produto
     res.status(201).send({
-        message: 'deletando produto',
+        message: 'deletando pedido',
         id: id_produto
     })
 })
@@ -24,7 +24,7 @@ rota.delete('/:id_produto', (req,res,next) =>{
 rota.patch('/:id_produto', (req,res,next) =>{
     const id_produto = req.params.id_produto
     res.status(201).send({
-        message: 'Usando patch produto',
+        message: 'Usando patch pedido',
         id: id_produto
     })
 })
