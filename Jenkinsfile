@@ -4,7 +4,7 @@ pipeline {
     stages{
         stage('Buildando image docker'){
             steps{
-                sh 'docker build -t service-api .'
+                sh 'docker build -t service .'
             }
         }
         stage('executando compose'){
