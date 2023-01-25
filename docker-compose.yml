@@ -3,7 +3,7 @@ services:
 
   app:
     container_name: api
-    image: service-api
+    image: service
     ports:
       - 3000:3000
     restart: unless-stopped
