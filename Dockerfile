@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN yarn install
-
-CMD ["yarn", "start"]
+RUN npm install
+RUN npm install -g nodemon
+CMD ["npm", "run", "start"]
