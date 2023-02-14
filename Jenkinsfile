@@ -12,5 +12,15 @@ pipeline {
                 sh 'docker-compose up -d'
             }
         }
+        stage("sonar"){
+            steps{
+                script {
+                    scannerHome = tool 'sonar-scanner';
+                }
+                withSonarQubeEnv('sonar-server'){
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=node-server -Dsonar.sources=. -Dsonar.host.url=${env.SONAR_HOST_URL} -Dsonar.login=${env.SONAR_AUTH_TOKEN}"
+                }
+            }
+        }
     }
 }
