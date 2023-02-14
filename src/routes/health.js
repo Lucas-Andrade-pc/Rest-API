@@ -1,7 +1,7 @@
 const express = require('express');
 const rota = express.Router();
 
-rota.get('/', (req, res, next) =>{
+rota.get('/', (_req, _res, _next) =>{
     res.status(200).send({
         message: 'Aplicação Ok'
     })
