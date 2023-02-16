@@ -28,5 +28,11 @@ pipeline {
             }
             
         }
+        stage("removendo conteiner"){
+            steps {
+                sh "docker rm $(docker ps -aq) -f"
+                sh "docker rmi $(docker images -aq) -f"
+            }
+        }
     }
 }
