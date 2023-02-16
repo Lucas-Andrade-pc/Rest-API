@@ -4,7 +4,7 @@ pipeline {
     stages{
         stage('Buildando image docker'){
             steps{
-                sh 'docker build -t service .'
+                sh 'docker build -t devops/service .'
             }
         }
         stage("upload image"){
