@@ -7,6 +7,17 @@ pipeline {
                 sh 'docker build -t service .'
             }
         }
+        stage("upload image"){
+            steps {
+                script {
+                    withCredentials([userNamePassword(crenditialsId: 'nexus-user', usernameVarieble: 'USERNAME', passwordVariable: 'PASSWORD')]){
+                        sh 'docker login -u $USERNAME -p $PASSWORD ${NEXUS_URL}'
+                        sh 'docker tag devops/service:latest ${NEXUS_URL}'
+                        sh 'docker push ${NEXUS_URL}/devops/service'
+                    }
+                }
+            }
+        }
         stage('executando compose'){
             steps{
                 sh 'docker-compose up -d'
