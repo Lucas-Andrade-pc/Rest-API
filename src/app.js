@@ -4,7 +4,7 @@ const routPedido = require('./routes/pedido')
 const routeH = require('./routes/health')
 const app = express() // instancia do express
 
-#app.disable("x-powered-by")
+
 
 app.use('/produtos', routeProduto)
 app.use('/pedido', routPedido)
