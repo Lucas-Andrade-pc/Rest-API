@@ -41,8 +41,8 @@ pipeline {
         }
         stage("removendo conteiner"){
             steps {
-                sh '''docker rm api -f \ 
-                   && docker rmi devops/service -f'''
+                sh 'docker rm api -f' 
+                sh 'docker rmi devops/service -f'
             }
         }
     }
