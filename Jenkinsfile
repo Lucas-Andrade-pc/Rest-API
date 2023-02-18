@@ -39,6 +39,11 @@ pipeline {
             }
             
         }
+        stage("testando aplicação"){
+            steps{
+                sh "curl localhost:3000/health"
+            }
+        }
         stage("removendo conteiner"){
             steps {
                 sh 'docker rm api -f' 
